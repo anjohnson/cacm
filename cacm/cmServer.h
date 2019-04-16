@@ -2,7 +2,7 @@
 
 #include "casdef.h"
 #include "caNetAddr.h"
-#include "inetAddrID.h"	// This header is private to libca...
+#include "inetAddrID.h" // This header is private to libca...
 #include "clientData.h"
 
 enum display {
@@ -46,7 +46,7 @@ public:
     }
 
     unsigned long numSearches(void) const {
-	return count;
+        return count;
     }
 
     void setShow(int what) {

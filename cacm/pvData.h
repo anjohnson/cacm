@@ -10,20 +10,21 @@ class pvNode :
 {
 public:
     pvNode(const char *name) :
-	stringId(name),
-	count(0) {}
+        stringId(name),
+        count(0) {}
+
     ~pvNode(void) {}
 
     void reset(void) {
-	count = 0;
+        count = 0;
     }
 
     void increment(void) {
-	count++;
+        count++;
     }
 
     unsigned long counts(void) const {
-	return count;
+        return count;
     }
 
     void report(void) const {

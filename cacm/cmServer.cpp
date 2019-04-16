@@ -8,8 +8,10 @@
 #define RECORD_NAME_SIZE 80
 #define TIME_SIZE 32
 
-pvExistReturn cmServer::pvExistTest(const casCtx& ctx, const caNetAddr& addr,
-    const char* pvname) {
+pvExistReturn
+cmServer::pvExistTest(const casCtx& ctx, const caNetAddr& addr,
+    const char* pvname)
+{
     clientNode *pnode = clientTable.lookup(inetAddrID(addr));
     if (!pnode) {
         epicsTime now = epicsTime::getCurrent();
@@ -34,7 +36,9 @@ pvExistReturn cmServer::pvExistTest(const casCtx& ctx, const caNetAddr& addr,
     return pverDoesNotExistHere;
 }
 
-void cmServer::prune(const epicsTime & cutoff, unsigned long maxNames) {
+void
+cmServer::prune(const epicsTime & cutoff, unsigned long maxNames)
+{
     if (numClients() == 0) return;
     
     resTable<clientNode,inetAddrID>::iterator that = clientTable.firstIter();
@@ -59,7 +63,9 @@ void cmServer::prune(const epicsTime & cutoff, unsigned long maxNames) {
     fflush(stdout);
 }
 
-void cmServer::report(const epicsTime &now, double delay) const {
+void
+cmServer::report(const epicsTime &now, double delay) const
+{
     if (show & rates) {
         char when[TIME_SIZE];
         now.strftime(when, TIME_SIZE, "%Y-%m-%d %T.%03f");

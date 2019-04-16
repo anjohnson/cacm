@@ -1,7 +1,7 @@
 // clientData.h
 
 #include "caNetAddr.h"
-#include "inetAddrID.h"	// This header is private to libca...
+#include "inetAddrID.h" // This header is private to libca...
 #include "tsSLList.h"
 #include "resourceLib.h"
 #include "epicsTime.h"
@@ -15,9 +15,9 @@ class clientNode :
 {
 public:
     clientNode(const caNetAddr& clientAddr, epicsTime now) :
-	inetAddrID(clientAddr),
+        inetAddrID(clientAddr),
         born(now),
-	searches(0),
+        searches(0),
         lifetotal(0) {
         clientAddr.stringConvert(ipAddr, IPADDR_SIZE);
     }
@@ -35,11 +35,11 @@ public:
     void search(const char *name);
 
     unsigned long numPVs(void) const {
-	return pvTable.numEntriesInstalled();
+        return pvTable.numEntriesInstalled();
     }
 
     unsigned long numSearches(void) const {
-	return searches;
+        return searches;
     }
 
     unsigned long lifeSearches(void) const {

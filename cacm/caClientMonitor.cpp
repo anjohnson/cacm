@@ -6,7 +6,9 @@
 #include "cmServer.h"
 
 
-void usage(void) {
+void
+usage(void)
+{
     puts("usage: caClientMonitor [-h] [-oA] [-BCDNRbcdnr] [-kmt <seconds>]\n"
          "   -h      Help, prints this message\n"
          "   -o      Once, prints a single report and exits\n"
@@ -19,7 +21,9 @@ void usage(void) {
          "Specifying -o implies -bCdNR, omitting it implies -BCDnR");
 }
 
-int main(int argc, char **argv) {
+int
+main(int argc, char **argv)
+{
     int show = nothing;
     int hide = nothing;
     int usual = births | deaths | clients | rates;
@@ -30,7 +34,7 @@ int main(int argc, char **argv) {
     bool repeat = true;
     bool beacons = false;
     int c;
-    
+
     while ((c = getopt(argc, argv, "bcdnrhok:m:t:ABCDNR")) != EOF) {
         switch(c) {
         case 'B': show |= births;   break;
@@ -44,15 +48,15 @@ int main(int argc, char **argv) {
         case 'd': hide |= deaths;   break;
         case 'n': hide |= names;    break;
         case 'r': hide |= rates;    break;
-        
+
         case 'A':
             beacons = true;
             break;
-        
+
         case 'h':
             usage();
             exit(0);
-        
+
         case 'k':
             killDelay = atof(optarg);
             if (killDelay < 1.0)
@@ -60,16 +64,16 @@ int main(int argc, char **argv) {
             if (killDelay < prunePeriod)
                 prunePeriod = killDelay;
             break;
-        
+
         case 'm':
             maxNames = atoi(optarg);
             break;
-        
+
         case 'o':
             repeat = false;
             usual = clients | names | rates;
             break;
-        
+
         case 't':
             reportDelay = atof(optarg);
             break;
@@ -102,6 +106,6 @@ int main(int argc, char **argv) {
             active = repeat;
         }
     }
-    
+
     return 0;
 }
