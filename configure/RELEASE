@@ -1,0 +1,4 @@
+#RELEASE Location of external products
+
+EPICS_BASE=/usr/local/epics/extensions-base/3.15.5-ext1
+
