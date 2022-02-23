@@ -1,4 +1,7 @@
-#RELEASE Location of external products
+# RELEASE - Location of external dependencies
+#
+# PCAS is needed if your EPICS_BASE doesn't include it
+PCAS=/C2/ioc-modules/build/PCAS/4.13.2-C2-1+PH-012
 
-EPICS_BASE=/usr/local/epics/extensions-base/3.15.5-ext1
-
+# Should build on any Base release
+EPICS_BASE=/C2/ioc-modules/build/BASE/7.0.4-C2-1+PH-012
