@@ -1,4 +1,6 @@
 // cmServer.cpp
+// Part of CA Client Monitor by Andrew Johnson <anj@anl.gov>
+// SPDX-License-Identifier: EPICS
 
 #include <string.h>
 #include <stdio.h>

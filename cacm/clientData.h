@@ -1,4 +1,6 @@
 // clientData.h
+// Part of CA Client Monitor by Andrew Johnson <anj@anl.gov>
+// SPDX-License-Identifier: EPICS
 
 #include "caNetAddr.h"
 #include "inetAddrID.h" // This header is private to libca...

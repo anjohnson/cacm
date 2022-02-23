@@ -1,4 +1,6 @@
 // pvData.h
+// Part of CA Client Monitor by Andrew Johnson <anj@anl.gov>
+// SPDX-License-Identifier: EPICS
 
 #include "tsSLList.h"
 #include "resourceLib.h"
